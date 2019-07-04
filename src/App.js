@@ -5,19 +5,30 @@ import UserOutput from "./UserOutputs/UserOutput";
 
 class App extends Component {
   state = {
-    username: "Fitsum Belayneh"
+    username: "Beza Aklilu"
   };
 
-  switchNameHandler = () => {
+  switchNameHandler = newName => {
     this.setState({
-      username: "Beza Akilu"
+      username: newName
+    });
+  };
+
+  nameChangedHandler = event => {
+    this.setState({
+      username: event.target.value
     });
   };
   render() {
     return (
       <div className="App">
-        <Userinput username="Fitsum Belayneh" />
-        <UserOutput name="Belayneh" />
+        <Userinput changed={this.nameChangedHandler} />
+        <UserOutput username={this.state.username} />
+        <UserOutput
+          username={this.state.username}
+          click={this.switchNameHandler.bind(this, "Solomon Teshome")}
+        />
+        <UserOutput username={this.state.username} />
       </div>
     );
   }

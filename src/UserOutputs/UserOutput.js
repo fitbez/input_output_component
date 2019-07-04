@@ -1,9 +1,9 @@
 import React from "react";
 
-const UserOutput = () => {
+const UserOutput = props => {
   return (
     <div>
-      <p>I am studying modern React.</p>
+      <p onClick={props.click}>My name is {props.username}.</p>
       <p>React is an awesome UI library.</p>
     </div>
   );

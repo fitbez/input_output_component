@@ -25,6 +25,7 @@ class App extends Component {
         <Userinput
           focus={this.switchNameHandler.bind(this, "Solomon Teshome")}
           changed={this.nameChangedHandler}
+          currentName={this.state.username}
         />
         <UserOutput username={this.state.username} />
         <UserOutput username={this.state.username} />
